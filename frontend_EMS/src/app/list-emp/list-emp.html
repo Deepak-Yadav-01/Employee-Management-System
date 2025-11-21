@@ -1,0 +1,27 @@
+<div class="container mt-4">
+  <table *ngIf="employees.length > 0" class="table table-hover table-bordered align-middle shadow-sm">
+    <thead class="table-dark text-center">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Salary</th>
+        <th style="width: 220px;">Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.lastName}}</td>
+        <td>{{employee.salary | currency:'INR'}}</td>
+        <td class="text-center">
+          <div class="btn-group" role="group">
+            <button (click)="updateEmp(employee.id)" class="btn btn-sm btn-info">Update</button>
+            <button (click)="deleteEmp(employee.id)" class="btn btn-sm btn-danger">Delete</button>
+            <button (click)="viewEmp(employee.id)" class="btn btn-sm btn-primary">View</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
