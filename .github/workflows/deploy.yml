@@ -1,4 +1,4 @@
-name: CI-CD Pipeline
+name: CI/CD Pipeline
 
 on:
   push:
@@ -34,6 +34,6 @@ jobs:
       with:
         host: ${{ secrets.EC2_HOST }}
         username: ${{ secrets.EC2_USER }}
-        key: ${{ secrets.EC2_KEY }}
+        key_path: key.pem
         source: CRUD/target/*.jar
-        target: /home/ec2-user/app
+        target: /home/ec2-user/app/
