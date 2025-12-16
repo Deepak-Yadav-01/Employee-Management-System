@@ -24,12 +24,11 @@ jobs:
         cd Employee-Management-System
         mvn clean package -DskipTests
 
-
     - name: Copy JAR to EC2
       uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.EC2_HOST }}
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_KEY }}
-        source: target/*.jar
+        source: Employee-Management-System/target/*.jar
         target: /home/ec2-user/app
