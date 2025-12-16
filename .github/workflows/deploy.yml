@@ -21,7 +21,7 @@ jobs:
 
     - name: Build with Maven
       run: |
-        cd Employee-Management-System
+        cd CRUD
         mvn clean package -DskipTests
 
     - name: Copy JAR to EC2
